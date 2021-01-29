@@ -1,13 +1,16 @@
+#for python 3.7
+#By judi_Co & Ecstasyyy
+
 import platform
 import os
 
-#for python 3.7
 
 # Variables
+version = "░░V 0.1░░░"
 sysos = platform.system()
 
 # Help is Doc of Win2Unix.help(arg)
-def help(arg):
+def help(arg = ""):
 
 	arg = arg.lower()
 	
@@ -38,7 +41,20 @@ def help(arg):
 		print("003 = Jaune         ? = Jaune-clair")
 		print("007 = Blanc         ? = Blanc-brillant")
 	else:
-		print("ici arive toute les requête qu'y non pas pus aboutire")
+		print("")
+		print("   ╔═════════════════════════════════╗ ")
+		print(f"  ╠╬╗░░Tools░[Win2Unix]░{version}░░╔╬╣ ")
+		print("  ╔╬╣░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╠╬╗ ")
+		print("  ╠╬╣░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╠╬╣ ")
+		print("  ╚╬╣░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╠╬╝ ")
+		print("  ╠╬╝░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░╚╬╣ ")
+		print("   ╚═════════════════════════════════╝ ")
+		print("")
+
+		print(f"la commande '{arg}' n'éxiste pas")
+		print(f"vous pover utilisuer les argument : ")
+		print(f"Win2Unix.help({cl})")
+		print(f"Win2Unix.help({co})")
 
 # Cleaning => Win2Unix.Clean()
 def Clean(sysos = sysos):
@@ -47,10 +63,10 @@ def Clean(sysos = sysos):
     else:
         os.system("clear")
 
-#Color => Win2Unix.Colors(color=) /!\ (color = <arg>) obligatoir /!\
-def Colors(sysos = sysos, color = "Blanc"):
+#Color => Win2Unix.Colors(color= <arg>) /!\ (color = <arg>) obligatoir /!\
+def Colors(color = "", sysos = sysos):
 	color = str(color).lower()
-	print(f"colore : {color}")
+	#print(f"colore : {color}")
 
 	color0  = ["noir","black","0"]
 	color1  = ["bleu","blue","1","004"]
@@ -69,8 +85,9 @@ def Colors(sysos = sysos, color = "Blanc"):
 	color14 = ["jaune-clair","light-yellow","e","14"]
 	color15 = ["blanc-brillant","brilliant-white","f","15"]
 
-	color0_15 = color0 + color1 + color2 + color3 + color4 + color5 + color6 + color7 + color8 + color9 + color10 + color11 + color12 + color13 + color14 + color15
-	if color != color0_15:
+	allcolor = color0 + color1 + color2 + color3 + color4 + color5 + color6 + color7 + color8 + color9 + color10 + color11 + color12 + color13 + color14 + color15
+	
+	if color != allcolor:
 		print("tu na pas indiqur de couleur")
 
 	if sysos == "Windows":
@@ -140,4 +157,5 @@ def Colors(sysos = sysos, color = "Blanc"):
 			os.system("tput setaf {}")
 		elif color in color15:
 			os.system("tput setaf {}")
+
 
